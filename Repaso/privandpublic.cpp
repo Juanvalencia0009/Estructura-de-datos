@@ -35,16 +35,21 @@ public:
         policy = p;
     }
     void push_back(int elem){
+        //verifica si el vector esta lleno
         if (sz == capacity){
             resize ();
 
         }
+        //agrega el nuevo elemento al final del vector
         storage[sz] = elem;
         sz++;
     }
 private:
+    //redimensiona el vector
     void resize (){
+        //duplica la capacidad del vector
         capacity *= policy;
+        //crea un nuevo arreglo con la nueva capacidad
         int *newStorage = new int [capacity];
         for (unsigned int i = 0; i < sz; i++){
             newStorage[i] = storage[i];
@@ -53,6 +58,7 @@ private:
         storage = newStorage;
     }
     public:
+    //reduce la capacidad del vector
     void shrink_to_fit(){
     if (sz < capacity){
         int *newStorage = new int [sz];
