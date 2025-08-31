@@ -19,7 +19,7 @@ public:
         //inicializa el vector con capacidad 10
         storage = new T[10];
         //inicializa la capacidad del vector
-        capacity = 5;
+        capacity = 10;
         //inicializa el tamaño del vector
         sz = 0;
         //inicializa la politica de crecimiento
